@@ -1,0 +1,13 @@
+{
+    "name": "front_end",
+    "version": "1.0.0",
+    "description": "Font end of QR code redirector",
+    "author": "Nero<nerocube.tw@gmail.com>",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.16.1"
+    }
+  }
