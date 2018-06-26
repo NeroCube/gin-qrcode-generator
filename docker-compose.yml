@@ -4,4 +4,6 @@ services:
     restart: "always"
     build: ./back-end
     ports:
-      - "9000:8080"
+      - "9000:3000"
+    environment:
+      PORT: "3000"

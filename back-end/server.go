@@ -1,13 +1,27 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+	qrcode "github.com/skip2/go-qrcode"
+)
 
 func main() {
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
+	router := gin.Default()
+	router.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "pong",
 		})
 	})
-	r.Run() // listen and serve on 0.0.0.0:8080
+
+	router.GET("/qrcode", func(c *gin.Context) {
+		content := c.DefaultQuery("content", "https://github.com/NeroCube")
+		if pic, err := qrcode.Encode(content, qrcode.Medium, 256); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		} else {
+			c.Data(http.StatusOK, "image/png", pic)
+		}
+	})
+	router.Run()
 }
