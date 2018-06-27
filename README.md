@@ -1,5 +1,5 @@
-# QR-Code-Generator
-Implement QR Code Generator in Docker with Golang
+# Gin-QR-Code-Generator
+Implement QR Code Generator in Docker with Gin framework
 
 ## Hello Service !!
 `curl -X GET "http://localhost:9000/ping"`
