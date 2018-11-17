@@ -1,5 +1,7 @@
 # Gin-QR-Code-Generator
 Implement QR Code Generator in Docker with Gin framework
+## Install
+`docker-compose up --build`
 
 ## Hello Service !!
 `curl -X GET "http://localhost:9000/ping"`
